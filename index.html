@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<!-- Required meta tags -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	    crossorigin="anonymous">
+
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="style.css">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+	<title>Mininum Box Calculator</title>
+</head>
+
+<body>
+	<div class="container">
+		<div id="wrapper" class="shadow-0 rounded bg-light">
+			<form class="form m-3 p-3">
+				<h3 class="font-weight-light">Specific the number of these coffee bags</h3>
+				<div class="row">
+					<div class="col">
+						<div class="form-group">
+							<label for="200g" class="display-4">200g</label>
+							<input type="number" class="form-control form-control-lg" id="200g" value="0" required>
+							<small id="200g-help" class="form-text text-muted">16 cm x 23 cm x 2 cm</small>
+							<div class="invalid-feedback">
+								Please choose a username.
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="form-group">
+							<label for="400g" class="display-4">400g</label>
+							<input type="number" class="form-control form-control-lg" id="400g" value="0" required>
+							<small id="400g-help" class="form-text text-muted">22 cm x 26 cm x 2 cm</small>
+						</div>
+					</div>
+					<div class="col">
+						<div class="form-group">
+							<label for="1000g" class="display-4">1000g</label>
+							<input type="number" class="form-control form-control-lg" id="1000g" value="0" required>
+							<small id="1000g-help" class="form-text text-muted">14 cm x 26 cm x 10 cm</small>
+						</div>
+					</div>
+				</div>
+				<div class="row align-items-center">
+					<div class="col-9 col-md-10">
+						<label for="box-size">
+							<h3 class="font-weight-light">Specific the size of the box</h3>
+						</label>
+						<input type="range" min="30" max="100" value="50" class="w-100" id="box-size">
+						<small id="box-size-help" class="form-text text-muted">These boxes are cubes and the size of the edge is between 30cm and 100cm.</small>
+					</div>
+					<div class="col">
+						<h1 id="box-value" class="display-4 text-right"></h1>
+						<small id="centimeters" class="form-text text-muted text-right">centimeters</small>
+					</div>
+				</div>
+				<div class="row mt-5">
+					<div id="alert-list" class="col">
+						<div id="alert-bags" class="hidden alert alert-danger alert-dismissible fade show" role="alert">
+							Number of
+							<strong>each bags</strong> should be positive.
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div id="alert-total" class="hidden alert alert-danger alert-dismissible fade show" role="alert">
+							Hey! Did you forget to give some bags?
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div id="alert-answer" class="hidden alert alert-success alert-dismissible fade show" role="alert">
+							<h4 class="alert-heading">Well done!</h4>
+							<hr>
+							<span class="display-4 font-weight-light">
+								Total number of boxes you need is
+							</span>
+							<span class="display-4">
+								<strong id="answer">10</strong>.
+							</span>
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="row justify-content-center">
+					<div class="col-3">
+						<button type="button" onclick="calculate(event)" class="btn btn-info btn-lg w-100">Calculate</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<!-- Script -->
+	<script src="script.js"></script>
+	<script src="binpacking.js"></script>
+	<!-- Optional JavaScript -->
+	<!-- Popper.js, then Bootstrap JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+	    crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+	    crossorigin="anonymous"></script>
+</body>
+
+</html>
